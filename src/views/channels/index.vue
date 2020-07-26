@@ -2,8 +2,8 @@
   <div class="layui-container">
     <div class="layui-row layui-col-space15">
       <div class="layui-col-md8">
-        <!-- <imooc-top></imooc-top>
-        <imooc-list></imooc-list>-->
+        <imooc-top></imooc-top>
+        <imooc-list></imooc-list>
       </div>
       <div class="layui-col-md4">
         <imooc-tips></imooc-tips>
@@ -22,8 +22,8 @@ import Sign from '@/components/sidebar/Sign'
 import HotList from '@/components/sidebar/HotList'
 import Ads from '@/components/sidebar/Ads'
 import Links from '@/components/sidebar/Links'
-// import List from '@/components/contents/List'
-// import Top from '@/components/contents/Top'
+import List from '@/components/contents/List'
+import Top from '@/components/contents/Top'
 export default {
   name: 'index',
   components: {
@@ -31,12 +31,11 @@ export default {
     'imooc-sign': Sign,
     'imooc-hotlist': HotList,
     'imooc-ads': Ads,
-    'imooc-links': Links
-    // 'imooc-list': List
-    // 'imooc-top': Top
+    'imooc-links': Links,
+    'imooc-list': List,
+    'imooc-top': Top
   }
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

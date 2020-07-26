@@ -1,17 +1,37 @@
 <template>
   <div class="fly-panel" style="margin-bottom: 0;">
     <div class="fly-panel-title fly-filter">
-      <a :class="{'layui-this': status ==='' && tag === ''}" @click.prevent="search()">综合</a>
+      <a
+        :class="{ 'layui-this': status === '' && tag === '' }"
+        @click.prevent="search()"
+        >综合</a
+      >
       <span class="fly-mid"></span>
-      <a :class="{'layui-this': status === '0'}" @click.prevent="search(0)">未结</a>
+      <a :class="{ 'layui-this': status === '0' }" @click.prevent="search(0)"
+        >未结</a
+      >
       <span class="fly-mid"></span>
-      <a :class="{'layui-this': status === '1'}" @click.prevent="search(1)">已结</a>
+      <a :class="{ 'layui-this': status === '1' }" @click.prevent="search(1)"
+        >已结</a
+      >
       <span class="fly-mid"></span>
-      <a :class="{'layui-this': status === '' && tag === '精华'}" @click.prevent="search(2)">精华</a>
+      <a
+        :class="{ 'layui-this': status === '' && tag === '精华' }"
+        @click.prevent="search(2)"
+        >精华</a
+      >
       <span class="fly-filter-right layui-hide-xs">
-        <a :class="{'layui-this': sort === 'created'}" @click.prevent="search(3)">按最新</a>
+        <a
+          :class="{ 'layui-this': sort === 'created' }"
+          @click.prevent="search(3)"
+          >按最新</a
+        >
         <span class="fly-mid"></span>
-        <a :class="{'layui-this': sort === 'answer'}" @click.prevent="search(4)">按热议</a>
+        <a
+          :class="{ 'layui-this': sort === 'answer' }"
+          @click.prevent="search(4)"
+          >按热议</a
+        >
       </span>
     </div>
     <list-item :lists="lists" :isEnd="isEnd" @nextpage="nextPage()"></list-item>
@@ -84,7 +104,7 @@ export default {
       getList(options)
         .then(res => {
           this.isRepeat = false
-          console.log(res)
+
           // 对于异常的判断，res.code 非200，我们给用户一个提示
           // 判断是否lists长度为0，如果为零即可以直接赋值
           // 当Lists长度不为0，后面请求的数据，加入到Lists里面来
@@ -116,7 +136,6 @@ export default {
         return
       }
       this.current = val
-      console.log(val)
       switch (val) {
         // 未结贴
         case 0:
@@ -152,5 +171,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
